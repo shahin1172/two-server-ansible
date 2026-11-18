@@ -1,0 +1,7 @@
+.vagrant/
+*.pem
+*.key
+inventory.ini
+__pycache__/
+*.pyc
+.env

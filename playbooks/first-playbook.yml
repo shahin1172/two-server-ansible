@@ -1,0 +1,19 @@
+---
+- name: Configure application server
+  hosts: app
+  become: true
+  gather_facts: false
+
+  tasks:
+    - name: Install Nginx
+      ansible.builtin.apt:
+        name: nginx
+        state: present
+        update_cache: true
+
+    - name: Start and enable Nginx
+      ansible.builtin.service:
+        name: nginx
+        state: started
+        enabled: true
+
